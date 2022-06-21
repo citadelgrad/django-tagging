@@ -473,6 +473,7 @@ class Tag(models.Model):
     """
     A tag.
     """
+    id = models.BigAutoField(primary_key=True)
     name = models.CharField(
         _('name'), max_length=settings.MAX_TAG_LENGTH,
         unique=True, db_index=True)
@@ -492,6 +493,7 @@ class TaggedItem(models.Model):
     """
     Holds the relationship between a tag and the item being tagged.
     """
+    id = models.BigAutoField(primary_key=True)
     tag = models.ForeignKey(
         Tag,
         verbose_name=_('tag'),
